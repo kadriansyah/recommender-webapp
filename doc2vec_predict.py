@@ -24,5 +24,5 @@ for doc in docLabels:
 model = gensim.models.Doc2Vec.load('models/doc2vec.model')
 inferred_vector = model.infer_vector(data)
 
-sims = model.docvecs.most_similar([inferred_vector], topn=10)
+sims = model.docvecs.most_similar(positive=[inferred_vector], topn=10)
 print(sims)
